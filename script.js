@@ -70,4 +70,8 @@ document.getElementById('simulacaoForm').addEventListener('submit', function(e) 
     });
   });
   
+  document.getElementById('menu-icon').addEventListener('click', function () {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+  });
   

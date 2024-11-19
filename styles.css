@@ -4,6 +4,7 @@
   --branco: #ffffff;
   --cinza-claro: #f5f5f5;
   --amarelo-dourado: #ffc107;
+  --dark: #333;
 }
 
 *{
@@ -25,10 +26,7 @@ body {
     margin: 0 auto;
     max-width: 1200px;
   }
-  .container h2 {
-    font-size: 35px;
-    margin: 35px 0;
-  }
+  
   
   .header {
     background: #1A73E8;
@@ -42,6 +40,7 @@ body {
     display: flex; 
     justify-content: space-around;
     max-width: 100%;
+    padding: 20px;
   }
   
   .header .logo {
@@ -63,11 +62,72 @@ body {
   .nav-links a:hover {
     letter-spacing: 0.5rem;
   }
+/* Menu Hamburguer (para telas pequenas) */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-icon .bar {
+  width: 25px;
+  height: 4px;
+  background: #fff;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    background: #1A73E8;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    z-index: 10;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+    align-items: end;
+  }
+
+  .nav-links a {
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-icon {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+
+
+  
   .hero {
     text-align: center;
     background: url('./assets/images/Daqui\ 10\ Anos\ Você\ Vai\ Desejar\ Ter\ Começado\ Hoje.png') no-repeat center center/cover;
     color: #fff;
     padding: 5rem 0;
+  }
+  .hero h2 {
+    width: 80%;
+    justify-content: center;
+    margin: 30px auto;
+  }
+  .hero p {
+    width: 80%;
+    justify-content: center;
+    margin: 30px auto;
   }
   
   .hero .btn-primary {
@@ -76,6 +136,10 @@ body {
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
+    transition: 0.5s;
+  }
+  .hero .btn-primary:hover {
+    letter-spacing: 0.5rem;
   }
   
   .beneficios, .servicos {
@@ -119,8 +183,6 @@ body {
 
     color: var(--branco);
     font-size: 35px;
-    margin: 20px;
-    
     text-shadow: #000 1px 1px;
   }
   .simulacao .container p {
@@ -163,9 +225,6 @@ body {
     letter-spacing: 0.5rem;
     
   }
-
-  
-
   .faq {
     background: #fff;
     padding: 20px;
@@ -196,3 +255,185 @@ body {
     border: 1px solid #ddd;
     border-top: none;
   }
+
+  /* Responsividade */
+
+/* Para telas menores que 450px */
+@media screen and (max-width: 450px) {
+  .container {
+    width: 100%;
+    max-width: 450px;
+  }
+  .container h2 {
+    padding: 20px;
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: justify;
+  }
+  .header .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .header .container h2 {
+    flex-direction: column;
+    font-size: 25px;
+    padding: 20px;
+  }
+
+  .header .logo {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    display: none;
+    background-color: var(--azul-royal);
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .hero .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .benefit-grid, .service-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 20px;
+    text-align: justify;
+  }
+  form {
+    max-width: 450px;
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  .simulacao .container h2 {
+    font-size: 28px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .simulacao .container p {
+    padding: 0 20px;
+    text-align: justify;
+  }
+  .simulacao .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  form button {
+    font-size: 16px;
+  }
+}
+
+/* Para telas entre 451px e 768px */
+@media screen and (min-width: 451px) and (max-width: 768px) {
+  .header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+  .header .logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+    flex-direction: row;
+    display: none;
+    background-color: var(--azul-royal);
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .hero {
+    padding: 4rem 0;
+  }
+
+  form {
+    max-width: 90%;
+    padding: 25px;
+  }
+
+  form button {
+    font-size: 17px;
+  }
+}
+main {
+  height: 100%;
+  
+}
+main .simulacao .container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+main .simulacao .container form {
+  width: 100%;
+}
+@media  screen and (max-width:768px) {
+  main {
+    height: 120vh;
+    
+  }
+  main .simulacao .container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  main .simulacao .container p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  main .simulacao .container h2{
+    margin-top: 60px;
+    font-size: 32px;
+  }
+  main .simulacao .container form {
+    width: 100%;
+    
+  }
+}
