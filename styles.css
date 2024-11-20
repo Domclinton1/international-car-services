@@ -38,10 +38,9 @@ body {
   .header .nav {
     background-color: var(--azul-royal);
     display: flex;
-    align-items: center; 
     justify-content: space-around;
-    max-width: 100%;
-    padding: 20px;
+    align-items: center;
+    padding: 0 50px;
   }
   
   
@@ -139,6 +138,7 @@ body {
   }
   .hero .btn-primary:hover {
     letter-spacing: 0.5rem;
+    color: var(--branco);
   }
   
   .beneficios, .servicos {
@@ -270,9 +270,9 @@ body {
     text-align: justify;
   }
   .header .nav {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    justify-content: space-between;
+    padding: 0 50px;
+  
   }
   .header .container h2 {
     flex-direction: column;
