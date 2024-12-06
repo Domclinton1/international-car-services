@@ -230,10 +230,33 @@
       
     </div>
   </footer>
+
   <a href="https://wa.me/553132267019" onclick="gtag()" class="btn-whatsapp" target="_blank" data-aos="zoom-in-up" data-aos-delay="400">
     <img  src="./assets/icons/wpp-float.svg" alt="Botão whatsapp">
     <span class="tooltip-text">Fazer Contato</span>
   </a>
+  <div class="modal" id="myModal">
+    <form id="simulacaoForm" class="modal-content">
+      <span class="close">&times;</span>
+      <div class="info-form">
+          <label for="nome">Nome:</label>
+          <input id="nome" type="text" placeholder="Nome Completo" required>
+      </div>
+      <div class="info-form">
+          <label for="email">Email:</label>
+          <input id="email" type="email" placeholder="E-mail" required>
+      </div>
+      <div class="info-form">
+          <label for="telefone">Telefone/Celular:</label>
+          <input id="telefone" type="tel" placeholder="Telefone" required>
+      </div>
+      <div class="info-form">
+          <label for="valor">Valor desejado:</label>
+          <input id="valor" type="text" placeholder="Valor desejado para financiamento" required>
+      </div>
+      <button type="submit" class="btn btn-primary" onclick="gtag()">Enviar</button>
+    </form>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

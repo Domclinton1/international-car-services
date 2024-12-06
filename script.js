@@ -75,3 +75,34 @@ document.getElementById('simulacaoForm').addEventListener('submit', function(e) 
     navLinks.classList.toggle('active');
   });
   
+
+  // Exibir o modal automaticamente ao carregar a página
+document.addEventListener("DOMContentLoaded", function() {
+  modal.style.display = "block";
+});
+
+// Seleciona o modal e o botão de fechar
+var modal = document.getElementById("myModal");
+var span = document.querySelector(".close");
+
+// Seleciona todos os botões com a classe .modalSimulator
+var buttons = document.querySelectorAll(".modalSimulator");
+
+// Adiciona um evento de clique para cada botão com a classe .modalSimulator
+buttons.forEach(function(button) {
+  button.onclick = function() {
+      modal.style.display = "block";
+  };
+});
+
+// Quando o usuário clicar no "X" (span), o modal será fechado
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Quando o usuário clicar fora do modal, ele será fechado
+window.onclick = function(event) {
+  if (event.target == modal) {
+      modal.style.display = "none";
+  }
+};
